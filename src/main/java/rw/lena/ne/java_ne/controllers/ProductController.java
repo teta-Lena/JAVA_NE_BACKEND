@@ -34,4 +34,9 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(true, saveProduct));
 
     }
+    @GetMapping("/allProducts")
+    public ResponseEntity<ApiResponse> getAll() {
+        return ResponseEntity.ok(ApiResponse.success(productService.getAllProducts()));
+    }
+
 }

@@ -31,8 +31,7 @@ public class QuantityServiceImpl implements QuantityService {
         return qtyRepository.findAll();
     }
     public void ValidateQuantity(Quantity qty){
-         Optional <Quantity> quantity =  qtyRepository.findByQuantityAndProductCode(qty.getQuantity(),qty.getProductCode());
-        if(quantity.isPresent()){
+        if(isExistsByQuantity(qty)){
             throw new BadRequestException(String.format("Already assigned a quantity to that product you can only update!"));
         }
     }

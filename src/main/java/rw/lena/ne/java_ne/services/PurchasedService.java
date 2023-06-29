@@ -9,9 +9,11 @@ import java.util.List;
 
 public interface PurchasedService {
 
-    List<Purchased> byLoggedInCustomer();
+    List<Purchased> byAuthenticatedCustomer();
 
-    List<Purchased> all();
+    List<Purchased> getAllPurchasedProducts();
 
     Purchased purchase(PurchaseDTO dto);
+
+    //add pagination if cart is too long
 }

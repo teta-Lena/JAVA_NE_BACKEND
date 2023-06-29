@@ -25,7 +25,7 @@ public class Purchased {
     private Product product;
 
     @OneToOne
-    @JoinColumn(name = "quantity_id")
+    @JoinColumn(name = "quantityId")
     private Quantity productQuantity;
 
     @ManyToOne
